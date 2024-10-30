@@ -31,7 +31,12 @@ pipeline{
       steps{
         sh 'mvn pmd:pmd '
       }
-    }
+    post {
+       always {
+                 recordIssues tools: [pmdParser(pattern: '**/target/pmd.xml')]
+              }
+         }
+   } 
    stage('SPOTBUGS'){
       steps{
         sh 'mvn spotbugs:spotbugs '
