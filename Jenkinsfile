@@ -17,5 +17,10 @@ pipeline{
         sh 'mvn clean install '
       }
     }
+   stage('CHECKSTYLE'){
+      steps{
+        sh 'mvn checkstyle:checkstyle '
+      }
+    }
   }
 }
