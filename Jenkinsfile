@@ -21,7 +21,12 @@ pipeline{
       steps{
         sh 'mvn checkstyle:checkstyle '
       }
-    }
+    post {
+        always {
+                  recordIssues tools: [checkStyle(pattern: '**/target/checkstyle-result.xml')]
+                }
+            }
+        }
    stage('PMD'){
       steps{
         sh 'mvn pmd:pmd '
@@ -31,6 +36,11 @@ pipeline{
       steps{
         sh 'mvn spotbugs:spotbugs '
       }
+    post {
+         always {
+                  recordIssues tools: [spotBugs(pattern: '**/target/spotbugsXml.xml')]
+                }
+            }
     }
   }
 }
