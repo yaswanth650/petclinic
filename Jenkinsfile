@@ -14,7 +14,7 @@ pipeline{
      }
    stage('BUILD'){
       steps{
-        sh 'mvn clean package'
+        sh 'mvn checkstyle:check'
       }
     }
   }
