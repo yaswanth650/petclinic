@@ -27,5 +27,10 @@ pipeline{
         sh 'mvn pmd:pmd '
       }
     }
+   stage('SPOTBUGS'){
+      steps{
+        sh 'mvn spotbugs:spotbugs '
+      }
+    }
   }
 }
