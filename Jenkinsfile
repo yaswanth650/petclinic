@@ -51,6 +51,11 @@ pipeline{
       steps{
         sh 'mvn findbugs:findbugs '
       }
+    post {
+         always {
+                  recordIssues tools: [findBugs(pattern: '**/target/findbugsXml.xml')]
+                }
+            }
    }
   } 
 }
