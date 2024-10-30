@@ -4,7 +4,7 @@ pipeline{
     maven 'Maven'
     }
   stages{
-    stage('Initialize'){
+    stage('INITIALIZE'){
       steps{
         sh '''
                 echo "PATH = ${PATH}"
@@ -12,5 +12,8 @@ pipeline{
             '''
         }
      }
+   stage('BUILD'){
+      steps{
+        sh 'mvn clean install'
   }
 }
