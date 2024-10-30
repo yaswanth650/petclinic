@@ -22,5 +22,10 @@ pipeline{
         sh 'mvn checkstyle:checkstyle '
       }
     }
+   stage('PMD'){
+      steps{
+        sh 'mvn pmd:pmd '
+      }
+    }
   }
 }
