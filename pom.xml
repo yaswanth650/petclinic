@@ -321,7 +321,6 @@
         <target>7</target>
     </configuration>
 </plugin>
- <plugins>
     <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
