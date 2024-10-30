@@ -63,7 +63,7 @@ pipeline{
             }
             post {
                 always {
-                    junit skipPublishingChecks: true, '**/target/surefire-reports/*.xml'
+                    junit  '**/target/surefire-reports/*.xml'
                 }
             }
         }
