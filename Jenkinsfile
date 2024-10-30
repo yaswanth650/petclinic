@@ -47,5 +47,10 @@ pipeline{
                 }
             }
     }
-  }
+   stage('FINDBUGS'){
+      steps{
+        sh 'mvn findbugs:findbugs '
+      }
+   }
+  } 
 }
