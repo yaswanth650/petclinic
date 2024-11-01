@@ -50,7 +50,14 @@ import org.springframework.stereotype.Repository;
 public class JdbcOwnerRepositoryImpl implements OwnerRepository {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    /**
+     * This SimpleJdbcInsert is used to insert owner data into the database.
+     */
+    
+private SimpleJdbcInsert insertOwner;
 
+    
+    
     private SimpleJdbcInsert insertOwner;
 
     @Autowired
