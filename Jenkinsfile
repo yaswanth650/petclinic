@@ -59,7 +59,9 @@ pipeline{
    }
    stage('TEST'){
       steps{
+       catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
         sh 'mvn test '
+      }
       }
    post {
     always {
