@@ -75,7 +75,11 @@ private SimpleJdbcInsert insertOwner;
      * @param dataSource the DataSource to be used
      * @param namedParameterJdbcTemplate the NamedParameterJdbcTemplate to be used
      */
-public final class JdbcOwnerRepositoryImpl(final DataSource dataSource, 
+    public final class JdbcOwnerRepositoryImpl {
+
+      private final DataSource dataSource;
+        
+       public final class JdbcOwnerRepositoryImpl(final DataSource dataSource, 
                                final NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.insertOwner = new SimpleJdbcInsert(dataSource)
             .withTableName("owners")
@@ -84,7 +88,7 @@ public final class JdbcOwnerRepositoryImpl(final DataSource dataSource,
         this.namedParameterJdbcTemplate = NamedParameterJdbcTemplate;
 
     }
-
+   
 
     /**
      * Loads {@link Owner Owners} from the data store by last name, returning all 
