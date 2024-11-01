@@ -39,7 +39,11 @@ public class JpaVetRepositoryImpl implements VetRepository {
 
     @PersistenceContext
     private EntityManager em;
-
+/**
+ * This method retrieves a list of all veterinarians from the database.
+ * 
+ * @return a list of Vet objects
+ */
 
     @Override
     @Cacheable(value = "vets")
