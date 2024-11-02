@@ -63,6 +63,12 @@ pipeline{
         sh 'mvn test '
       }
       }
+   post {
+          always {
+               junit  '**/target/surefire-reports/*.xml'
+               sh 'test ${currentBuild.currentResult} != UNSTABLE'
+                }
+            } 
   }
 }
 }
