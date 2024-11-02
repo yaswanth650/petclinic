@@ -59,7 +59,7 @@ pipeline{
    }
    stage('TEST'){
       steps{
-        sh 'mvn  -Dmaven.test.failure.ignore=true test '
+        sh 'mvn test '
       }
    post {
           always {
