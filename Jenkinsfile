@@ -66,7 +66,7 @@ pipeline{
    post {
           always {
                junit  '**/target/surefire-reports/*.xml'
-               sh 'test ${currentBuild.currentResult} != UNSTABLE'
+               sh  "test ${currentBuild.currentResult} != UNSTABLE"
                 }
             } 
   }
