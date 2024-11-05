@@ -63,12 +63,7 @@ pipeline{
       }
    post {
           always {
-               script {
-                    catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                        junit 'target/surefire-reports/*.xml'
-                    }
-                    currentBuild.result = 'SUCCESS'
-                }
+              junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true, skipMarkingBuildUnstable: true
                 }
             } 
   }
