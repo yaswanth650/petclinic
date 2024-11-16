@@ -10,18 +10,10 @@ options {
         durabilityHint 'MAX_SURVIVABILITY'
       } 
   stages {
-    stage ('Initialize') {
-      steps {
-        sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-            ''' 
-      }
-    }
     stage('Clone') {
             steps {
                 git url: 'https://github.com/yaswanth650/webapp.git', branch: 'master'
-                sh 'zip -r webapp.zip .'
+                sh 'zip -r webapp.zip ./src'
             }
         }
     stage('CODETHREAT-Scan') {
